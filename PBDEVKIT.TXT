@@ -1,0 +1,119 @@
+Develop Portfolio Applications on Your 
+PC with:
+
+  *  Portfolio emulation on your PC,
+
+    *  Source level debugging,
+
+      *  Full screen text editor,
+
+        *  Interactive graphics, and
+
+          *  Single stepping of code.
+
+All of the tools you will need for 
+Portfolio code development with 
+the PowerBASIC Development System.
+
+The PowerBASIC Development System 
+provides a complete emulation of the 
+Portfolio on your PC.  Now you can see 
+what your program will look like on an 
+emulation of the screen when you port 
+it to the Portfolio. 
+
+There are pull-down menus, a powerful 
+WordStar-compatible text editor, a 
+context-sensitive help system, and a 
+source-level debugger to make 
+programming easier.   You can 
+instantly compile and run or single-
+step your Portfolio code on a desktop 
+PC and take advantage of the increased 
+memory and disk capacity in order to 
+create more complex code.  
+
+Once you have created and verified a 
+program on the PC, the PowerBASIC 
+Development System will generate a 
+stand-alone .COM or .RUN file. Then it 
+is ready to be transferred to the 
+Portfolio for execution.  
+
+The PowerBASIC Development System also 
+extends the PowerBASIC language far
+beyond what is possible in a palmtop 
+environment.  You can easily have the 
+power of a desktop PC in your pocket 
+with the combination of the PowerBASIC 
+Development System and your Portfolio.  
+The PowerBASIC Development System 
+includes: 
+
+* Additional data types: Binary-Coded 
+  Decimal fixed- and floating-point
+  (to offer unmatched 18-digit
+  accuracy in financial calculations),
+  Extended-precision (80-bit) floating 
+  point, Quad-word (64-bit) integer,
+  and Long (32-bit) integer
+
+* "Flex" strings and arrays to 
+  construct user-defined dynamic data 
+  structures at will, during the 
+  execution of a program
+
+* Dynamic arrays, as well as local and 
+  static variables and non-scalar
+  SUB/function parameters, for 
+  efficient code generation and memory
+  usage
+
+* Arrays and strings to take advantage 
+  of all available memory
+
+* Complete set of application-oriented 
+  string manipulation functions: 
+  VERIFY, REMOVE, REPLACE, EXTRACT, 
+  TALLY, LTRIM, RTRIM, REPEAT, and 
+  many more
+
+* MINimum and MAXimum value functions 
+  which work with both numeric and 
+  string data types
+
+* Powerful array manipulation 
+  statements which work with both
+  numeric and string data types: 
+  ARRAY SORT, ARRAY SCAN, ARRAY INSERT, 
+  and ARRAY DELETE
+
+* Modular programming with separate 
+  compilation and linking of source 
+  code modules to create "units" of 
+  compiled routines which can be used 
+  with many programs, making it easy 
+  to collect "libraries" of proven, 
+  reusable code
+
+* Assembly code or object code links 
+  from other language compilers into 
+  programs using industry-standard 
+  .OBJ object modules
+
+* Efficient block memory access with 
+  PEEK, PEEKI, PEEKL, PEEK$, POKE, 
+  POKEI, POKEL, and POKE$ to move 
+  blocks of data around in memory 
+  rapidly
+
+If you are interested in getting more 
+information about the PowerBASIC 
+Development System for the desktop PC, 
+please complete the information 
+request section on the PowerBASIC 
+registration card and return it to:  
+
+Spectra Publishing
+1030 D East Duane Ave.
+Sunnyvale, CA 94086.

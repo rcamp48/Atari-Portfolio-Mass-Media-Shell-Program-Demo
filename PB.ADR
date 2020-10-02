@@ -1,0 +1,747 @@
+ABS(numeric expression)
+Returns the absolute value of
+numeric expression.
+
+ASC(string expression)
+Returns the ASCII code of the first
+character in string expression.
+
+ATN(numeric expression)
+Returns the arctangent (inverse
+tangent) of numeric expression.
+
+BEEP
+Beeps the speaker once.
+
+BIN$(numeric expression)
+Returns a string of 1's and 0's
+which is the binary equivalent of
+numeric expression.
+
+CALL INTERRUPT n
+Invokes system interrupt n. Use REG
+statement to load registers before
+interrupt, REG function to retrieve
+registers after interrupt.
+
+CALL procname [(parameter list)]
+Invokes a procedure.
+
+CHDIR path
+Changes the default directory to
+path.
+
+CHR$(integer expression)
+Returns the character specified by
+ASCII code integer expression.
+
+CIRCLE (x,y), Radius [,color]
+Draws or erases a circle on the
+graphics screen, with center (x,y),
+and radius Radius. If color is 1 or
+omitted, the circle is drawn; a
+value of 0 causes it to be erased.
+
+CLEAR
+Sets all numeric variables to 0 and
+all string variables to a null
+string.
+
+CLOSE [[#]filenum [, [#]filenum]...]
+Ends the relationship between a file
+handle (or number) and the
+associated disk file.
+
+CLS
+Clears the screen and moves the
+cursor to the upper left corner.
+
+COMMAND$
+Returns everything that was typed
+following the program name on the
+command line.
+
+COS(numeric expression)
+Returns the cosine of expression.
+
+CSRLIN
+Returns the current vertical
+position (row number) of the cursor.
+
+CVD(string expression)
+Converts 8-byte string expression
+read from random-access file to a
+double-precision floating point
+number.
+
+CVI(string expression)
+Converts 2-byte string expression
+read from random-access file to an
+integer.
+
+CVS(string expression)
+Converts 4-byte string expression
+read from random-access file to a
+single-precision floating point
+number.
+
+DATA constant [,constant]...
+Declares constants in the source
+code to be read by READ statements.
+
+DATE$
+Sets or displays system date.
+
+DEFDBL letter range
+       [,letter range]...
+Declares that all variable
+identifiers beginning with the
+specified letter(s) are double-
+precision floating point.
+
+DEF FNidentifier [(argument list)]
+As a single-line function:
+  DEF FNidentifier [(argument
+      list)] = expression
+As a multi-line function:
+  DEF FNidentifier [(argument list)]
+    . {statements}
+    [EXIT DEF]
+    .
+    [FNidentifier = expression]
+  END DEF
+
+DEF FNSigned%(Unsigned!)
+  IF Unsigned! > 32767 THEN
+    FNSigned% = Unsigned! - 65536
+  ELSE
+    FNSigned% = Unsigned!
+  END IF
+END DEF
+
+DEFINT letter range
+       [,letter range]...
+Declares that all variable
+identifiers beginning with the
+specified letter(s) are integers.
+
+DEF SEG [= numeric expression]
+Specifies the memory segment in
+which POKE and PEEK will operate.
+
+DEFSNG letter range
+       [,letter range]...
+Declares that all variable
+identifiers beginning with the
+specified letter(s) are single-
+precision floating point.
+
+DEFSTR letter range
+       [,letter range]...
+Declares that all variable
+identifiers beginning with the
+specified letter(s) are strings.
+
+DIM Var(subscripts) [,Var(subsc)]...
+Declares Var to be an array.
+subscripts defines the dimensions of
+the array. 1st element is always 0.
+
+DO/LOOP statement
+DO [{WHILE|UNTIL} expression]
+  statements [EXIT LOOP]
+{LOOP|WEND}|{{WHILE|UNTIL} expr}
+Defines a group of program state-
+ments to be executed repetitively as
+long as a certain condition is met.
+
+END [{DEF|IF|SUB}]
+END terminates program execution.
+END DEF, IF, or SUB de
+in
+s the end
+of a structured block.
+
+EOF(filenum)
+Returns true if the end of a file
+has been reached, or if the com-
+munications buffer is empty.
+
+ERL
+Returns the nearest line number to
+the most recent run-time error.
+
+ERR
+Returns the error code of the most
+recent run-time error.
+
+ERROR errcode
+Simulates run-time error errcode.
+
+EXECUTE filespec
+Transfers control to the specified
+program. After program execution,
+control returns to DOS.
+
+EXI
+ {DEF|FOR|IF|LOOP|SUB}
+Allows you leave a structure
+prematurely.
+
+EXP(numeric expression)
+Returns e raised to the specified
+power. e is the base for natural
+logarithms, approximately 2.718282.
+
+FIELD [#]file, width AS string-var
+      [,width AS string-var]...
+Defines the variables of a random-
+access file buffer.
+
+FOR/NEXT statement
+FOR Counter = start TO stop [STEP
+		       increment]
+  . {statements}
+NEXT [Counter [,Counter]...]
+Defines a loop of program statements
+whose execution is controlled by an
+automatically incrementing or
+decrementing counter.
+
+FRE({0|-1|-2})
+FRE(0) returns the space available
+to be allocated as a single string.
+FRE(-1) returns the space available
+for array data. FRE(-2) returns the
+available stack space.
+
+GET$ [#] filenum, Count, string-var
+Reads Count characters from the
+specified binary file and assigns
+them to string variable.
+
+GET [#]filenum [, recnum]
+Reads a record from a random-access
+file.
+
+GOSUB {label|linenumber}
+Jumps to the statement prefaced by
+label or linenumber, after first
+saving the current location on the
+stack for a later RETURN.
+
+GOTO {label|linenumber}
+Jumps to the code identified by
+label or linenumber.
+
+HEX$(numeric expression)
+Returns a string that is the
+hexadecimal representation of
+numeric expression.
+
+IF block statement
+IF integer expression THEN
+  {statements}
+[ELSEIF integer expression THEN
+  {statements}]
+[ELSE
+  {statements}]
+END IF
+The IF block creates IF/THEN/ELSE
+constructs with multiple lines and/
+or conditions.
+
+IF iexp THEN {stmt} [ELSE {stmt}]
+If integer expression iexp is TRUE
+(nonzero), the statements following
+THEN are executed and the statements
+following the ELSE are not executed.
+Otherwise, the THEN statements are
+ignored and the ELSE statements are
+executed.
+
+INKEY$
+Returns a string of zero, one, or
+two characters reflecting the
+contents of the keyboard buffer.
+
+INPUT #filenum, variables
+Loads variables with data from a
+sequential file.
+
+INPUT$(n [, [#] filenum])
+Reads n characters from a file,
+device, or the keyboard.
+
+INPUT [;] [prompt {;|,}] variables
+Prompts the user for keyboard input
+and assigns the input to one or more
+variables.
+
+INP(port)
+Reads a byte read from an I/O port.
+
+INSTAT
+Returns logical TRUE (nonzero) if a
+key has been pressed, FALSE
+otherwise.
+
+INSTR([n,] main string, match str)
+Returns position of first occurrence
+of match string in main string,
+starting at main string position n.
+Returns 0 if not found.
+
+INT(numeric expression)
+Returns the largest integer less
+than or equal to numeric expression.
+
+KILL filespec
+Deletes file(s) with name contained
+in string expression filespec.
+
+LCASE$(string expression)
+Returns string expression converted
+to all lowercase.
+
+LEFT$(string expression, n)
+Returns the leftmost n characters of
+string expression.
+
+LEN(string expression)
+Returns the number of characters in
+string expression.
+
+LET statement
+[LET] variable = expression
+Assigns a value to a variable.
+
+LINE INPUT #filenum, string variable
+Reads an entire line from a file or
+device into string-var, ignoring
+delimiters.
+
+LINE INPUT [;][prompt;] string-var
+Reads an entire line from the
+keyboard into string-var, ignoring
+delimiters.
+
+LINE (x1,y1)-(x2,y2) [,color]
+Draws or erases a straight line on
+the graphics screen. (x1,y1) and
+(x2,y2) are the line's endpoints.
+Using 1 for color or omitting color
+causes the line to be drawn; 0
+erases it.
+
+LOCATE [row][,[column][,[cursor]]]
+row and column specify where to
+position the cursor. If cursor is 0,
+the cursor will be invisible; if it
+is 1 it will be visible.
+
+LOC(filenum)
+Returns the number of the last
+record written or read in a
+random-access file, the number of
+128-byte blocks written or read in
+a sequential file, the file pointer
+position in a binary file, or the
+number of characters in the input
+buffer in a communications file.
+
+LOF(filenum)
+Returns the size of the indicated
+file, or the space remaining in the
+communications buffer.
+
+LOG(numeric expression)
+Returns the natural (base e)
+logarithm of numeric expression.
+
+LPOS(printer)
+Reports how many characters have
+been sent to the printer since the
+last carriage-return.
+
+LPRINT and LPRINT USING statements
+LPRINT [expression list [{,|;}]]
+LPRINT USING format string;
+    expression list [{,|;}]
+LPRINT and LPRINT USING work just
+like PRINT and PRINT USING except
+that the data is sent to the
+printer.
+
+LSET field variable = string expr
+Left-justifies string expression
+into the "field variables" for a
+random-access file.
+
+MID$ function
+MID$(string expr, start [, length])
+Returns a substring of string expr
+that is length characters long and
+starts at the start character of
+string expression.
+
+MID$ statement
+MID$(string var, start [, length]) =
+      replacement string
+Replaces length characters of string
+var, beginning at character position
+start, with the replacement string.
+
+MKDIR path
+Creates the subdirectory specified
+by path.
+
+MKD$(double-precision float expr)
+Converts double-precision floating
+point number to 8-byte string for
+use with a random-access file.
+
+MKI$(integer expression)
+Converts integer to 2-byte string
+for use with a random-access file.
+
+MKS$(single-precision float expr)
+Converts single-precision floating
+point number to 4-byte string for
+use with a random-access file.
+
+NAME filespec1 AS filespec2
+Gives the file represented by
+filespec1 the name filespec2.
+
+NOTE about STRPTR/STRSEG/VARPTR/VARSEG
+Notice that each of these functions
+returns a positive floating point
+value which is in the range 
+0..65535 (0000..FFFF hex), not an 
+integer value. Normally, you will 
+be using these functions in 
+conjunction with DEF SEG, PEEK, 
+POKE, and REG, all of which can 
+accept floating point values in 
+this range. There may be times, 
+however, when you wish to store 
+a value returned by one of these 
+functions in an integer variable. 
+The function's result does 
+represent a 16-bit integer quantity, 
+but it is represented as an
+unsigned integer from 0..65535. An 
+integer variable can store a 16-bit
+SIGNED quantity which ranges from 
+-32768..+32767 (also 0000..FFFF hex).
+Using the following DEF FN, you can 
+create a signed integer value in the
+range -32768..+32767 from an
+unsigned value of 0..65535:
+
+OCT$(numeric expression)
+Returns a string containing the
+octal (base 8) representation of
+numeric expression.
+
+ON ERROR GOTO {label|line number}
+Specifies an error-handling routine
+and enables/disables error trapping.
+
+ON n GOSUB {label|line number}
+     [,{label|line number}]...
+Calls one of several subroutines
+based on value of numeric
+expression n.
+
+ON n GOTO {label|line number}
+    [,{label|line number}]...
+Jumps to one of several destinations
+based on value of numeric expression
+n.
+
+OPEN COM statement
+OPEN "COM1: [baud] [,parity] [,data]
+     [,stop] [options]" AS[#]filenum
+OPEN COM opens and configures a
+serial communications port. baud is
+one of 75, 110, 150, 300, 600, 1200,
+1800, 2400, 4800, or 9600 (default =
+300). parity is one of S (space), O
+(odd), M (mark), E (even), or N
+(none). The default is E. data is
+one of 5, 6, 7, or 8, specifying
+the number of data bits (default =
+7). stop is either 1 or 2,
+specifying the number of stop bits
+(default=1 except for 75 & 110
+baud). The syntax for the options
+block is: [,RS] [,CS[mS]] [,DS[mS]]
+	  [,CD[mS]] [,LF] [,PE]
+RS suppresses RTS. CS[mS] controls
+CTS. DS[mS] controls DSR. CD[mS]
+controls CD. LF appends a linefeed
+to every carriage-return sent. PE
+enables parity checking. mS
+specifies how many milliseconds to
+wait for the correct line status
+(0..65535) before giving an error.
+If 0 or omitted, no checking is
+performed. CS and DS default to 1000
+mS, CD defaults to 0.
+
+OPEN statement
+OPEN filespec [FOR mode] AS [#]file
+	      [LEN = record size]
+OPEN modestring, [#]file, filespec
+		 [,record size]
+OPEN prepares a file for reading or
+writing. mode is one of OUTPUT,
+INPUT, or APPEND for a sequential
+file, RANDOM for a random-access
+file, or BINARY for a binary file.
+Using the alternate syntax, mode-
+string is one of "O","I","A","R",
+or "B". record size is the random-
+access file record size.
+
+OUT portno, byte
+Sends byte to output port portno.
+
+PEEK(address)
+Returns the byte at offset address
+in the current segment.
+
+POINT(x,y)
+Returns a value of 1 pixel (x,y) is
+on or 0 if the pixel is off.
+
+POKE address, byte
+Stores a single byte at offset
+address in the current segment.
+
+POS(x)
+Returns the horizontal position
+(column number) of the cursor.
+
+PRINT USING format string; expr
+      [{,| |;} [expression]]...
+Sends formatted information to the
+screen.
+
+PRINT # and PRINT # USING statements
+PRINT #file, [[USING format string;]
+  expr [{,| |;} [expression]]...]
+Writes formatted information to a
+file or device.
+
+PRINT [expr [{,| |;} [expr]]...]
+Displays information on the screen.
+
+PSET (x,y) [,color]
+Plots or erases pixel (x,y) on the
+graphics screen. The pixel is set if
+color=1 or is unspecified; it is
+reset (erased) if color=0.
+
+PUT$ [#]filenum, string expression
+Writes the contents of string
+expression to binary file filenum at
+the file's current pointer position.
+
+PUT [#]filenum [, recnum]
+Writes a record to a random-access
+file.
+
+RANDOMIZE numeric expression
+Seeds the random number generator.
+
+READ variable [, variable]...
+Loads variable(s) with values found
+in DATA statements.
+
+REG function and statement
+Function:   y = REG(register)
+Statement:  REG register, value
+Sets or returns a value in the
+register buffer.
+
+REM comment
+Indicates that the rest of a line is
+a comment.
+
+RESTORE [label|line number]
+Repositions the READ pointer.
+
+RESUME {label|line number}
+Continues execution of a program
+after a run-time error has been
+trapped and processed with an ON
+ERROR handler.
+
+RETURN
+Terminates execution of a subroutine
+and passes control to the statement
+directly following the calling
+GOSUB.
+
+RIGHT$(string expression, n)
+Returns the rightmost n characters
+of string expression.
+
+RMDIR path
+Deletes directory indicated by path.
+
+RND
+Returns a random double-precision
+value between 0 and 1.
+
+RSET field variable = string expr
+Right-justifies string data in a
+random-access file's "field
+variable".
+
+SCREEN mode
+Sets the screen display mode: 0 for
+text mode, 1 for graphics mode.
+
+SCREEN(row, column)
+Returns ASCII code of the character
+at the specified screen row and
+column in text mode.
+
+SEEK [#] filenum, position
+Sets the file pointer position of
+file filenum to position.
+
+SGN(numeric expression)
+SGN returns +1 if expression is
+positive, -1 if it is negative,
+or 0 if it is zero.
+
+SIN(numeric expression)
+Returns the sine of expression.
+
+SQR(numeric expression)
+Returns the square root of expr.
+
+STRING$(Count, {code|string expr})
+Returns a string of Count copies of
+the character with ASCII code code
+or the first character of string
+expr.
+
+STRPTR(string variable)
+Returns the offset in memory where
+the contents of string variable are
+stored. NOTE:  STRPTR differs
+from VARPTR (and STRSEG from VARSEG).
+When used with a string variable,
+VARPTR returns the offset of the
+string's handle, while STRPTR
+returns the offset of the actual
+string data.  See NOTE.
+
+STRSEG(string variable)
+Returns the segment in memory where
+the contents of string variable are
+stored. NOTE:  STRSEG differs
+from VARSEG (and STRPTR from VARPTR).
+When used with a string variable,
+VARSEG returns the segment of the
+string's handle, while STRSEG
+returns the segment of the actual
+string data.  See NOTE.
+
+STR$(numeric expression [, digits])
+Returns the string form of numeric
+expression, up to a specified number
+of digits.
+
+SUB/END SUB statements
+SUB procname [(param list)] SHARED
+  . {statements}
+  [EXIT SUB]
+  . {statements}
+END SUB
+Defines a procedure which is invoked
+with CALL.
+
+TAB(n)
+Moves the print position to the nth
+position on the current line.
+
+TAN(numeric expression)
+Returns the tangent of expression.
+
+The resulting signed integer 
+representation can be stored in an
+integer variable and manipulated 
+with logical operators like AND and
+OR. DEF SEG, PEEK, POKE, and REG 
+accept values in the range 
+-32768..+65535, treating
+-32768..-1 as +32768..+65535. This 
+is also compatible with PowerBASIC 
+forthe IBM PC.
+
+TIME$
+Reads or sets the system time.
+
+TONE statement
+TONE note, duration
+TONE touchtone$
+Generates a musical note for a
+specified duration or a series of
+tones to dial a number on a touch-
+tone telephone.
+
+TROFF
+Turns off debugging enabled by TRON.
+
+TRON
+Enters debugging mode which displays
+source code line numbers as each
+line is executed.
+
+UCASE$(string expression)
+Returns string expression converted
+to uppercase.
+
+VAL(string expression)
+Returns numeric equivalent of string
+expression.
+
+VARPTR(variable)
+Returns the offset in memory where
+the variable is stored. When you use
+VARPTR to get the offset of a string
+keep in mind that the value being
+returned is the offset of the string
+handle, not the actual data in the
+string.  Use STRPTR and STRSEG to
+find the address of the string's
+data.  See NOTE.
+
+VARSEG(variable)
+Returns the segment in memory where
+the variable is stored. When you use
+VARSEG to get the segment of a string
+keep in mind that the value being
+returned is the segment where the
+string handle is located, not the
+segment of where the actual contents
+of the string are located; use
+STRPTR and STRSEG to find this
+address.  See NOTE.
+
+WHILE/WEND statements
+WHILE integer expression
+  . {statements}
+WEND
+Defines a loop of statements which
+is executed repeatedly as long as
+integer expression evaluates to
+logical true.
+
